@@ -1,0 +1,54 @@
+
+/* 
+    Created on : 31 jul. 2024, 14:30:50
+    Author     : HP
+*/
+
+.close{
+    -fx-background-color:transparent;
+    -fx-cursor: hand;
+    -fx-text-fill: white;
+    
+}
+
+.close:hover{
+    -fx-background-color: #FF0000;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+
+/* left forml */
+
+.left-forml{
+    -fx-background-color:linear-gradient(to bottom right,#0000ff,#007fff );
+    -fx-border-color: #000;
+    -fx-border-width:4px, 0px, .4px.4px ;
+}
+
+.text-field{
+    -fx-background-color:linear-gradient(to bottom, #efefef, #eee);
+    -fx-background-radius:30px;  
+  /*  -fx-border-color:white;
+     -fx-border-width: 2px;
+     -fx-border-radius: 4px; */
+    -fx-font-size: 15px;      
+}
+
+.text-field:focused{
+    -fx-background-color: #ffffff;
+}
+
+/* boton login */
+.btn-login{
+    -fx-background-color:#271080;
+    -fx-cursor: hand;
+    -fx-font-size:20px;
+    -fx-text-fill:white;
+    
+}
+
+.btn-login:hover{
+    -fx-background-color:#1a008a;
+    -fx-text-fill:white;
+    -fx-font-weight: bold;
+}

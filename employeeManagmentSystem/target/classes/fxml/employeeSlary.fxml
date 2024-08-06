@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="salaryForml" prefHeight="500.0" prefWidth="800.0" styleClass="fondoSalary" stylesheets="@../styles/employeeSalary.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prueba.controller.EmployeeSlaryController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="25.0" layoutY="23.0" prefHeight="480.0" prefWidth="317.0" styleClass="detaills" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <HBox prefHeight="54.0" prefWidth="300.0" VBox.vgrow="NEVER">
+               <children>
+                  <Label contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="43.0" prefWidth="164.0" text="Detaills :" textAlignment="RIGHT">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets left="20.0" />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="53.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="54.0" prefWidth="300.0" VBox.vgrow="SOMETIMES">
+               <children>
+                  <Label prefHeight="42.0" prefWidth="121.0" text="Id Employee: " HBox.hgrow="SOMETIMES">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="detaillsId" prefHeight="43.0" prefWidth="174.0" styleClass="labelDetaills">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="436.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="54.0" prefWidth="300.0" VBox.vgrow="SOMETIMES">
+               <children>
+                  <Label prefHeight="42.0" prefWidth="121.0" text="Name: " HBox.hgrow="SOMETIMES">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="detaiellsName" prefHeight="43.0" prefWidth="174.0" styleClass="labelDetaills">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="436.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="54.0" prefWidth="300.0" VBox.vgrow="SOMETIMES">
+               <children>
+                  <Label prefHeight="42.0" prefWidth="121.0" text="Position: " HBox.hgrow="SOMETIMES">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="detaillsPosition" prefHeight="42.0" prefWidth="175.0" styleClass="positionLabel" text="Label" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="172.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="54.0" prefWidth="300.0" VBox.vgrow="SOMETIMES">
+               <children>
+                  <Label prefHeight="42.0" prefWidth="121.0" text="Salary:">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="detaillsSalary" prefHeight="43.0" prefWidth="174.0" styleClass="labelDetaills">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="298.0" spacing="20.0" VBox.vgrow="SOMETIMES">
+               <children>
+                  <Button fx:id="btnSalaryClear" mnemonicParsing="false" prefHeight="79.0" prefWidth="133.0" styleClass="botonClear" text="✂ Clear" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnSalaryUpdate" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleUpdateSalary" prefHeight="79.0" prefWidth="133.0" styleClass="botonUpdate" text="📄 Update">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+      <AnchorPane layoutX="351.0" layoutY="14.0" maxWidth="-Infinity" prefHeight="480.0" prefWidth="439.0" styleClass="tabla" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="351.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <TableView fx:id="tableSalary" layoutX="6.0" layoutY="32.0" prefHeight="450.0" prefWidth="420.0" styleClass="tablasSalary" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+              <columns>
+                <TableColumn fx:id="tableSalaryId" prefWidth="94.0" text="Id Employee" />
+                <TableColumn fx:id="tableSalaryName" minWidth="2.0" prefWidth="116.0" text="Name" />
+                  <TableColumn fx:id="tableSalaryPosition" minWidth="2.0" prefWidth="102.0" text="Position" />
+                  <TableColumn fx:id="tableSalarySalary" minWidth="2.0" prefWidth="101.0" text="Salary" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

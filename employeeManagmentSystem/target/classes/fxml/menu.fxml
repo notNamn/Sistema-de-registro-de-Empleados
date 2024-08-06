@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DisplacementMap?>
+<?import javafx.scene.effect.FloatMap?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../styles/menuStyle.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prueba.controller.MenuController">
+   <left>
+      <AnchorPane prefHeight="600.0" prefWidth="300.0" styleClass="nav-form" stylesheets="@../styles/menuStyle.css" BorderPane.alignment="CENTER">
+         <effect>
+            <DisplacementMap>
+               <mapData>
+                  <FloatMap />
+               </mapData>
+            </DisplacementMap>
+         </effect>
+         <children>
+            <Label fx:id="username" layoutX="48.0" layoutY="221.0" prefHeight="47.0" prefWidth="189.0" text="Username" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="207.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/escritorio2.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnHome" layoutX="39.0" layoutY="277.0" mnemonicParsing="false" onMouseClicked="#gotoHome" prefHeight="50.0" prefWidth="200.0" styleClass="nav-btn" text="Home">
+               <graphic>
+                  <FontAwesomeIcon glyphName="HOME" size="2em" styleClass="font-icon" />
+               </graphic>
+            </Button>
+            <Button fx:id="btnEmployee" layoutX="39.0" layoutY="327.0" mnemonicParsing="false" onMouseClicked="#gotoEmployee" prefHeight="50.0" prefWidth="200.0" styleClass="nav-btn" text="Add Employee">
+               <graphic>
+                  <FontAwesomeIcon glyphName="PLUS" size="2em" styleClass="font-icon" />
+               </graphic>
+            </Button>
+            <Button fx:id="btnSalary" layoutX="39.0" layoutY="377.0" mnemonicParsing="false" onMouseClicked="#gotoSalary" prefHeight="50.0" prefWidth="200.0" styleClass="nav-btn" text="Employee Salary">
+               <graphic>
+                  <FontAwesomeIcon glyphName="MONEY" size="2em" styleClass="font-icon" />
+               </graphic>
+            </Button>
+            <Button fx:id="btnLougOut" layoutX="40.0" layoutY="521.0" mnemonicParsing="false" onMouseClicked="#gotoExit" prefHeight="55.0" prefWidth="199.0" styleClass="logout" text="LOUG OUT">
+               <graphic>
+                  <FontAwesomeIcon glyphName="SIGN_OUT" size="3em" styleClass="icon-lougOut" />
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane fx:id="homeForml" prefHeight="500.0" prefWidth="843.0" styleClass="fondo-menu" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <children>
+            <AnchorPane layoutX="30.0" layoutY="30.0" prefHeight="176.0" prefWidth="840.0" styleClass="menuSuperior" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <AnchorPane prefHeight="150.0" prefWidth="260.0" styleClass="subMenuSuperior" HBox.hgrow="SOMETIMES">
+                           <children>
+                              <FontAwesomeIcon glyphName="USERS" layoutX="25.0" layoutY="88.0" size="5em" text="" />
+                              <Label layoutX="114.0" layoutY="85.0" prefHeight="17.0" prefWidth="130.0" text="TOTAL USERS" textFill="#f2f2f2">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="textTotalUser" alignment="CENTER_RIGHT" layoutX="117.0" layoutY="31.0" prefHeight="17.0" prefWidth="103.0" text="0" textAlignment="RIGHT" textFill="#f5f5f5" textOverrun="LEADING_WORD_ELLIPSIS">
+                                 <font>
+                                    <Font size="31.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="150.0" prefWidth="260.0" styleClass="subMenuSuperior" HBox.hgrow="SOMETIMES">
+                           <children>
+                              <FontAwesomeIcon fill="#f2f2f2" glyphName="EDIT" layoutX="22.0" layoutY="88.0" size="5em" text="" />
+                              <Label layoutX="99.0" layoutY="88.0" prefHeight="25.0" prefWidth="167.0" text="TOTAL EMPLOYEES" textFill="#f2f2f2">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="textTotalEmployee" alignment="CENTER_RIGHT" layoutX="105.0" layoutY="37.0" prefHeight="45.0" prefWidth="138.0" text="0" textFill="#eeeeee">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="150.0" prefWidth="260.0" styleClass="subMenuSuperior" HBox.hgrow="SOMETIMES">
+                           <children>
+                              <FontAwesomeIcon fill="WHITE" glyphName="APPLE" layoutX="23.0" layoutY="89.0" size="5em" />
+                              <Label layoutX="44.0" layoutY="93.0" prefHeight="25.0" prefWidth="185.0" text="EMPLOYEES IANCTIVES" textFill="#f2f2f2">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="textEmployeeInactive" alignment="CENTER_RIGHT" layoutX="97.0" layoutY="41.0" prefHeight="17.0" prefWidth="103.0" text="0" textAlignment="RIGHT" textFill="#f5f5f5" textOverrun="LEADING_WORD_ELLIPSIS">
+                                 <font>
+                                    <Font size="31.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AreaChart fx:id="graficoHomeEmployee" layoutX="231.0" layoutY="229.0" prefHeight="344.0" prefWidth="496.0" title="Employee Salary">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </AreaChart>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </AnchorPane>
+   </center>
+</BorderPane>

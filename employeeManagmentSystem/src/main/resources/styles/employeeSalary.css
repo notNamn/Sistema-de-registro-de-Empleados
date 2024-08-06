@@ -1,0 +1,70 @@
+.fondoSalary {
+    -fx-background-color: #f7f7f7;
+    -fx-background-radius: 12px;
+    -fx-padding: 20px;
+}
+
+.detaills, .tabla {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0, 0, 2);
+}
+
+.labelDetaills, .positionLabel {
+    -fx-background-radius: 10px;
+    -fx-padding: 5px;
+}
+
+.positionLabel {
+    -fx-background-radius: 10px;
+    -fx-border-color: #c1c1c1;
+    -fx-border-width: 1px;
+}
+
+.tablasSalary {
+    -fx-background-color: transparent;
+    -fx-border-color: linear-gradient(to bottom right, #4a6fa1, #3ea8a6);
+    -fx-border-width: 1px;
+    -fx-border-radius: 12px;
+}
+
+.tablasSalary .column-header-background {
+    -fx-background-color: linear-gradient(to bottom right, #4a6fa1, #3ea8a6);
+    -fx-background-insets: 0;
+    -fx-background-radius: 10px 10px 0 0;
+}
+
+.tablasSalary .column-header {
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-text-fill: #ffffff;
+}
+
+.tablasSalary .table-column {
+    -fx-alignment: CENTER;
+    -fx-font-size: 14px;
+}
+
+.botonUpdate, .botonClear {
+    -fx-background-radius: 12px;
+    -fx-font-size: 16px;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);
+    -fx-background-color: linear-gradient(to bottom right, #4a6fa1, #3ea8a6);
+    -fx-text-fill: #ffffff;
+    -fx-border-color: transparent;
+}
+
+.botonUpdate:hover, .botonClear:hover {
+    fx-text-fiell:bold;
+    -fx-background-color: linear-gradient(to bottom right, #3ea8a6, #4a6fa1);
+}
+
+.botonClear {
+    -fx-background-color: linear-gradient(to bottom right, #f06060, #ff7676);
+}
+
+.botonClear:hover {
+    -fx-background-color: linear-gradient(to bottom right, #ff7676, #f06060);
+}

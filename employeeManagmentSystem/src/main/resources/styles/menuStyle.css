@@ -1,0 +1,64 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 1 ago. 2024, 17:12:58
+    Author     : HP
+*/
+
+/* MENU  DERECHO */
+.nav-form{
+    -fx-background-color:linear-gradient(to bottom right, #272b3f, #256b51);
+}
+
+.nav-btn{
+    -fx-background-color:transparent;
+    -fx-cursor:hand;
+    -fx-font-family:"Arial";
+    -fx-font-size:14px;
+    -fx-text-fill:#fff;
+    -fx-alignment:CENTER-LEFT;
+}
+.nav-btn:hover{
+    -fx-border-color: white;
+    -fx-font-weight: bold;
+    
+}
+
+.logout{
+    -fx-background-color:#219a6a;
+    -fx-background-radius:10px;
+    -fx-cursor:hand;
+    -fx-text-fill:#fff;
+}
+.logout:hover, .icon-lougOut{
+    -fx-background-color:#18a383;
+    -fx-font-weight: bold;
+    
+    -fx-fill: white; /* color del icono */
+    -fx-text-fill:#fff; 
+    -fx-font-weight: bold;
+}
+
+.font-icon {
+    -fx-fill: white; /* Aquí puedes poner el color que desees */
+}
+
+/* Seccion de la pantalla de inicio  */
+
+.fondo-menu{
+    -fx-background-color: #cccccc;
+    -fx-background-radius: 20px;
+}
+
+.menuSuperior{
+    -fx-background-color: #fff;
+    -fx-background-radius: 20px;
+    -fx-padding: 10; 
+}
+
+.subMenuSuperior{
+     -fx-background-color: blue;
+     
+}
