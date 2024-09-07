@@ -1,5 +1,5 @@
 # Sistema-de-registro-de-Empleados
-Aplicación de escritorio para la gestión de empleados utilizando JavaFX.
+Aplicación de escritorio para la gestión de empleados utilizando Java 21.
 
 ## Vistas de la interfas
 ![image](https://github.com/user-attachments/assets/8f698a9c-d31f-417c-8caa-4b75d859413d)
