@@ -40,8 +40,8 @@ public class LoginSystemController implements Initializable {
     @FXML
     private CheckBox showPassword;
 
-    private DatabaseConnection conectar = new DatabaseConnection();  // Inicializa la conexión
-    private String nombreTabla = "user";  // Nombre de la tabla en la base de datos
+    private DatabaseConnection conectar = new DatabaseConnection(); 
+    private String nombreTabla = "user";  
     private String nombreBD = "login_system";
 
     /**
@@ -49,13 +49,13 @@ public class LoginSystemController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Sincroniza el contenido del PasswordField y el TextField para que siempre tengan el mismo valor.
+        
         passwordText.textProperty().bindBidirectional(password.textProperty());
     } 
     
-    // Limpiar los campos
+
     public void close() {
-        // Limpiar los campos de texto
+    
         username.clear();
         password.clear();
         passwordText.clear();
@@ -71,10 +71,10 @@ public class LoginSystemController implements Initializable {
         return true;
     }
     
-    // Acción para cambiar de escena después del login exitoso
+  
     private void accionLogearse(){
         try {
-            String ruta = "/fxml/menu.fxml"; // Cambia a la ruta correcta de tu siguiente escena
+            String ruta = "/fxml/menu.fxml"; 
             Stage stage = (Stage)loginBtn.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(ruta));
             Scene scene = new Scene(fxmlLoader.load());
@@ -84,7 +84,6 @@ public class LoginSystemController implements Initializable {
         }
     }
     
-    // Mostrar alerta con un mensaje específico
     public void showAlert(String mensaje){
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error de Login");
@@ -92,14 +91,14 @@ public class LoginSystemController implements Initializable {
         alert.showAndWait();
     }
     
-    // Verificación de las credenciales de usuario en la base de datos
+
     public void verificarCredenciales(){
         if (!verificarEntrada()) {
-            return; // Si la entrada no es válida, detener el proceso
+            return; 
         }
 
         String user = username.getText();
-        String pass = password.getText();  // Usamos passwordText y password ya que están sincronizados
+        String pass = password.getText();  
         
         String sql = "SELECT * FROM " + nombreTabla + " WHERE nameUser = ? AND passUser = ?";
         try (Connection conn = conectar.conectar(nombreBD);
@@ -112,10 +111,10 @@ public class LoginSystemController implements Initializable {
             
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
-                    // Usuario encontrado, proceder con el login
+                   
                     accionLogearse();
                 } else {
-                    // Usuario no encontrado o credenciales incorrectas
+                    
                     showAlert("Usuario o contraseña incorrectos.");
                 }
             } catch (Exception e) {
@@ -129,18 +128,17 @@ public class LoginSystemController implements Initializable {
         }
     }
     
-    // Método que se llama cuando se presiona el botón de login
+    
     @FXML
     public void handleLoginButtonAction() {
         verificarCredenciales();
     }
     
-    //// Mostrar en consola
+  
     private void mostrarConsola(String user, String pass){
         System.out.println("Bienvenido! -> Usuario: " + user + " Contraseña: " + pass);
     }
     
-    // Alternar visibilidad de la contraseña
     @FXML
     public void togglePasswordVisibility() {
         if (showPassword.isSelected()) {
