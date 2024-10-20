@@ -53,7 +53,6 @@ public class Employee {
         this.idEmployee = new SimpleIntegerProperty(idEmployee);
     }
 
-    // Getters y setters utilizando propiedades observables
 
     public int getIdEmployee() {
         return idEmployee.get();
