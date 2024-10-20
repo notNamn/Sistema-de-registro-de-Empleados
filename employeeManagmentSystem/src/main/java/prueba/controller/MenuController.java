@@ -70,8 +70,8 @@ public class MenuController implements Initializable {
     @FXML
     private Label username;
     
-    private DatabaseConnection conectar = new DatabaseConnection();  // Inicializa la conexión
-    private String nombreTabla = "user";  // Nombre de la tabla en la base de datos
+    private DatabaseConnection conectar = new DatabaseConnection();  
+    private String nombreTabla = "user";  
     private String nombreBD = "login_system";
     
     /**
@@ -83,7 +83,7 @@ public class MenuController implements Initializable {
         calcularTotalEmployee();
         calcularTotalEmployeeInactive();
         calcularTotalUser();
-        actualizarGraficoHomeEmployee(); // grafico 
+        actualizarGraficoHomeEmployee(); 
     }    
     
     // FUNCIONALIDAD DEL MENU 
@@ -126,7 +126,6 @@ public class MenuController implements Initializable {
         loginStage.show();
     }
     
-    // crear una mensaje de confimacion
     private void confrimarExit() throws IOException{
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setHeaderText(null);
@@ -134,12 +133,12 @@ public class MenuController implements Initializable {
         alert.setContentText("Dese salir de la app?");
         Optional<ButtonType> option = alert.showAndWait();
         if(option.get().equals(ButtonType.OK)){
-            salirApp(); // llamar al metodo salir de la app
+            salirApp(); 
         }
         
     }
     
-    // FUNCIONALIDAD DE LAS CARD VER EL TOTAS DE EMPLOYEES, USERS, 
+
     
     private void calcularTotalUser(){
         String sql = "SELECT COUNT(idUser) FROM user";
@@ -198,33 +197,30 @@ public class MenuController implements Initializable {
     @FXML
     private AreaChart<String, Number> graficoHomeEmployee;
 
-    // Método que actualiza el gráfico de salarios de empleados con datos obtenidos de la base de datos.
+    
     private void actualizarGraficoHomeEmployee() {
-        // Consulta SQL que agrupa los salarios por fecha y los ordena en orden ascendente, limitando los resultados a las últimas 7 fechas.
         String sql = "SELECT date, SUM(salary) as total_salary FROM employee GROUP BY date ORDER BY TIMESTAMP(date) ASC LIMIT 7";
 
-        try (Connection conn = conectar.conectar(nombreBD); // Establece una conexión con la base de datos.
-                 PreparedStatement psmt = conn.prepareStatement(sql); // Prepara la consulta SQL.
-                 ResultSet rs = psmt.executeQuery()) {  // Ejecuta la consulta y obtiene los resultados en un ResultSet.
+        try (Connection conn = conectar.conectar(nombreBD);
+                 PreparedStatement psmt = conn.prepareStatement(sql); 
+                 ResultSet rs = psmt.executeQuery()) { 
 
-            // Crea una nueva serie de datos que se usará para almacenar los pares fecha-salario.
+            
             XYChart.Series<String, Number> series = new XYChart.Series<>();
 
-            // Recorre cada fila del ResultSet.
+           
             while (rs.next()) {
-                // Extrae los valores de "date" y "total_salary" de la fila actual y los añade como un punto
-                // de datos a la serie (la fecha como clave y la suma de los salarios como valor).
+                
                 series.getData().add(new XYChart.Data<>(rs.getString("date"), rs.getDouble("total_salary")));
             }
 
-            // Añade la serie de datos al gráfico 'graficoHomeEmployee', lo que actualiza la visualización.
+           
             graficoHomeEmployee.getData().add(series);
         } catch (Exception e) {
-            // En caso de que ocurra un error durante la conexión a la base de datos o la ejecución de la consulta,
-            // se imprime el stack trace para facilitar el diagnóstico del problema.
+            
             e.printStackTrace();
         } finally {
-            // Cierra la conexión con la base de datos (si el método conectar.desconectar() realiza esta función).
+           
             conectar.desconectar();
         }
     }
