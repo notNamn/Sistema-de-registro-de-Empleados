@@ -22,37 +22,8 @@ public class EmployeeDAO {
         this.conectar = new DatabaseConnection();
     }
 
-    // metodo para guardar 
-    // idEmployee, name, numberPhone, gender, position, date, salary, image
-//    public void guardar(Employee employee ){
-//        String query = "INSERT INTO employee (name, numberPhone, gender, position, date, salary, image) "
-//                +" VALUES (?,?,?,?,?,?,?)";
-//        try(Connection conn = conectar.conectar(nombreBaseDatos);
-//            PreparedStatement psmt = conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS) ) {
-//            psmt.setString(1, employee.getName());
-//            psmt.setInt(2, employee.getNumberPhone());
-//            psmt.setString(3, employee.getGender());
-//            psmt.setString(4, employee.getPosition());
-//            psmt.setDate(5, employee.getDate());
-//            psmt.setDouble(6, employee.getSalary());
-//            psmt.setString(7, employee.getImage());
-//            
-//            int columnas = psmt.executeUpdate(query);
-//            if(columnas == 0){
-//                throw  new SQLException("Error al crear el employee, no hay filas afectadas.");
-//            }
-//            try (ResultSet generateKey = psmt.getGeneratedKeys()) {
-//                if (generateKey.next()) {
-//                    employee.setIdEmployee(generateKey.getInt(1));
-//                }
-//            }
-//            
-//        } catch (SQLException e) {
-//            System.out.println("Error al guardar: "+ e.getMessage());
-//        } finally {
-//            conectar.desconectar();
-//        }
-//    }
+    
+
     public void guardar(Employee employee) {
         String query = "INSERT INTO employee (name, numberPhone, gender, position, date, salary, image) "
                 + "VALUES (?,?,?,?,?,?,?)";
@@ -131,34 +102,7 @@ public class EmployeeDAO {
         return employees;
     }
 
-    // actualizar un employee
-    // idEmployee, name, numberPhone, gender, position, date, salary, image
-//    public void actualizarEmployee(Employee emplo){
-//        String query = "UPDATE employee SET "+ 
-//                "name = ?, numberPhone = ?, gender = ?, position = ?, date = ?, image = ? "+ 
-//                "WHERE idEmployee = ?";
-//        try(Connection conn = conectar.conectar(nombreBaseDatos);
-//            PreparedStatement psmt = conn.prepareStatement(query)  ) {
-//            psmt.setString(1, emplo.getName());
-//            psmt.setInt(2, emplo.getNumberPhone());
-//            psmt.setString(3, emplo.getGender());
-//            psmt.setString(4, emplo.getPosition());
-//            psmt.setDate(5, emplo.getDate());
-//            psmt.setString(6, emplo.getImage());
-//            psmt.setInt(7, emplo.getIdEmployee()); // ID EMPLOYEEE
-//            
-//            int filasAfectadas = psmt.executeUpdate();
-//            if(filasAfectadas == 0){
-//                throw  new SQLException("No se actualiza ninguna fila");
-//            }
-//                    
-//        } catch (SQLException e) {
-//            System.out.println("Error al actualizar employee: " + e.getMessage());
-//        } finally {
-//            conectar.desconectar();
-//        }
-//        
-//    }
+    
     public void actualizarEmployee(Employee emplo) {
         String query = "UPDATE employee SET "
                 + "name = ?, numberPhone = ?, gender = ?, position = ?, date = ?, salary = ?, image = ? "
