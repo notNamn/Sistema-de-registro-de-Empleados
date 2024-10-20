@@ -133,40 +133,7 @@ public class EmployeeController implements Initializable {
         }
     }
 
-//    @FXML
-//    private void handleAddEmployee() {
-//        Employee newEmployee = new Employee(
-//                textEmployeeName.getText(),
-//                Integer.parseInt(textEmployeeNumberPhone.getText()),
-//                comboxEmployeeGender.getValue(),
-//                comboxEmployeePosition.getValue(),
-//                new Date(System.currentTimeMillis()), // Assuming current date
-//                0, // Assuming salary field not used
-//                employeeImg.getImage().getUrl()
-//        );
-//        employeeDAO.guardar(newEmployee);
-//        loadEmployeeData();
-//    }
-//    @FXML
-//    private void handleAddEmployee() {
-//        try {
-//            String name = textEmployeeName.getText();
-//            int numberPhone = Integer.parseInt(textEmployeeNumberPhone.getText());
-//            String gender = comboxEmployeeGender.getValue();
-//            String position = comboxEmployeePosition.getValue();
-//            Date date = new Date(System.currentTimeMillis()); // Fecha actual
-//            double salary = 0.0; // Suponiendo que no se usa el salario o se establece en 0
-//            String image = (employeeImg.getImage() != null) ? employeeImg.getImage().getUrl() : null;
-//
-//            Employee newEmployee = new Employee(name, numberPhone, gender, position, date, salary, image);
-//            employeeDAO.guardar(newEmployee);
-//            loadEmployeeData();
-//            clearFields();
-//        } catch (Exception e) {
-//            System.out.println("Error al agregar el empleado: " + e.getMessage());
-//            // Aquí podrías mostrar un mensaje de alerta si algo falla
-//        }
-//    }
+
     @FXML
     private void handleAddEmployee() {
         try {
@@ -181,14 +148,14 @@ public class EmployeeController implements Initializable {
             Employee newEmployee = new Employee(name, numberPhone, gender, position, date, salary, image);
             employeeDAO.guardar(newEmployee);
 
-            // Actualiza la tabla
+           
             loadEmployeeData();
 
-            // Limpieza de campos después de agregar un empleado
+           
             clearFields();
         } catch (Exception e) {
             System.out.println("Error al agregar el empleado: " + e.getMessage());
-            // Aquí podrías mostrar un mensaje de alerta si algo falla
+            
         }
     }
 
