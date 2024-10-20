@@ -3,7 +3,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
 */
 /* 
-    Created on : 1 ago. 2024, 17:12:58
+    Created on : 1 ago. 2024, 19:12:58
     Author     : HP
 */
 
@@ -42,7 +42,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 }
 
 .font-icon {
-    -fx-fill: white; /* Aquí puedes poner el color que desees */
+    -fx-fill: white; 
 }
 
 /* Seccion de la pantalla de inicio  */
